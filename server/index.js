@@ -3,6 +3,9 @@ require("dotenv").config();
 // Import Express framework as a library
 const express = require("express");
 
+// PORT
+const PORT = process.env.PORT || 5000;
+
 // Import CORS package
 const cors = require("cors");
 
@@ -104,6 +107,6 @@ app.delete("/my-cookbook/:id", async (req, res) => {
 
 
 // Start server in port 5000
-app.listen(5000, () => {
-    console.log("Server started on port 5000")
+app.listen(PORT, () => {
+    console.log(`Server started on port ${PORT}`)
 });
