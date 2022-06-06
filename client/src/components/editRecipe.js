@@ -18,7 +18,7 @@ const EditRecipe = ({ recipe }) => {
         try {
             const body = { description, time, ingredients };
             console.log(time);
-            const response = await fetch(`http://localhost:5000/my-cookbook/${recipe.recipe_id}`, {
+            const response = await fetch(`https://slush-challenge.herokuapp.com/my-cookbook/${recipe.recipe_id}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(body)
