@@ -76,11 +76,11 @@ const EditRecipe = ({ recipe }) => {
                                 <label htmlFor="ingredients">Enter the ingredients required for this recipe</label>
                             </div>
                             <div className="modal-footer">
-                                <button type="button" className="btn btn-outline-secondary" data-bs-dismiss="modal"
+                                <button type="button" className="btn btn-outline-danger" data-bs-dismiss="modal"
                                     onClick={() => setDefaultValues(recipe)}>
                                     Close
                                 </button>
-                                <button type="button" className="btn btn-warning" onClick={e => editRecipe(e)}>
+                                <button type="button" className="btn btn-success" onClick={e => editRecipe(e)}>
                                     Save changes
                                 </button>
                             </div>

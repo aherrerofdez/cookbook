@@ -68,7 +68,7 @@ const InputRecipe = () => {
                     <label htmlFor="ingredients">Enter the ingredients required for this recipe</label>
                 </div>
                 <div className="text-center">
-                    <button className="btn btn-secondary center"> Add this recipe </button>
+                    <button className="btn btn-primary center"> Add this recipe </button>
                 </div>
             </form>
         </Fragment>

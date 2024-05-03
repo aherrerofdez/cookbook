@@ -1,7 +1,5 @@
 import React, { Fragment } from "react";
 
-import './App.css';
-
 // Import components
 import InputRecipe from "./components/inputRecipe";
 import ShowRecipes from "./components/showRecipes";
