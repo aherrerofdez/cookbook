@@ -2,7 +2,6 @@
 
 This project allows you to add, view, edit, and delete recipes stored in a PostgreSQL database using a React front-end and Node.js/Express back-end.
 
-
 ## Features
 
 - Add new recipes with a name, cooking time, and list of ingredients.
