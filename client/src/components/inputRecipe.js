@@ -11,7 +11,7 @@ const InputRecipe = () => {
         try {
             const body = { description, time, ingredients };
 
-            const response = await fetch("https://slush-challenge.herokuapp.com/my-cookbook", {
+            const response = await fetch("http://localhost:5000/my-cookbook", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(body)

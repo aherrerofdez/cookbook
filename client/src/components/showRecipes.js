@@ -8,7 +8,7 @@ const ShowRecipes = () => {
     // Delete recipe from database
     const deleteRecipe = async (id) => {
         try {
-            const deleteRecipe = await fetch(`https://slush-challenge.herokuapp.com/my-cookbook/${id}`, {
+            const deleteRecipe = await fetch(`http://localhost:5000/my-cookbook/${id}`, {
                 method: "DELETE"
             });
 
@@ -23,7 +23,7 @@ const ShowRecipes = () => {
     // Get recipes from database
     const getRecipes = async () => {
         try {
-            const response = await fetch("https://slush-challenge.herokuapp.com/my-cookbook");
+            const response = await fetch("http://localhost:5000/my-cookbook");
             const jsonData = await response.json();
 
             setRecipes(jsonData);
