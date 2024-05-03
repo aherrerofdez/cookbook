@@ -35,14 +35,12 @@ const EditRecipe = ({ recipe }) => {
         <Fragment>
             <button type="button" className="btn btn-warning" data-bs-toggle="modal"
                 data-bs-target={`#id${recipe.recipe_id}`}>
-                Edit &nbsp;
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-pencil" viewBox="0 0 16 16">
-                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
-                </svg>
+                <i class="bi bi-pencil-fill"></i>
+                &nbsp; Edit
             </button>
 
             <div className="modal fade" id={`id${recipe.recipe_id}`} tabIndex="-1"
-                aria-labelledby="editRecipeDialogForm" aria-hidden="true" onClick={() => setDefaultValues(recipe)}>
+                aria-labelledby="editRecipeDialogForm" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
                         <div className="modal-header">
@@ -51,37 +49,41 @@ const EditRecipe = ({ recipe }) => {
                                 onClick={() => setDefaultValues(recipe)} />
                         </div>
                         <div className="modal-body">
-                            <div className="form-floating mb-3">
-                                <input type="text" className="form-control" id="description" value={description}
-                                    onChange={e => setDescription(e.target.value)} />
-                                <label htmlFor="description">Enter a name for this recipe</label>
-                            </div>
-                            <div className="form-floating mb-3">
-                                <select className="form-select" id="time"
-                                    aria-label="Select cooking duration of this recipe"
-                                    value={time}
-                                    onChange={e => setTime(e.target.value)}
-                                >
-                                    <option value="10"> 10 minutes </option>
-                                    <option value="15"> 15 minutes </option>
-                                    <option value="20"> 20 minutes </option>
-                                    <option value="25"> 25 minutes </option>
-                                    <option value="30"> 30 minutes</option>
-                                </select>
-                                <label htmlFor="time">Enter the cooking duration of this recipe</label>
-                            </div>
-                            <div className="form-floating mb-5">
-                                <input type="text" className="form-control" id="ingredients" value={ingredients}
-                                    onChange={e => setIngredients(e.target.value)} />
-                                <label htmlFor="ingredients">Enter the ingredients required for this recipe</label>
-                            </div>
+                            <form>
+                                <div className="form-group form-floating mb-3">
+                                    <input type="text" className="form-control" id="description" value={description}
+                                        onChange={e => setDescription(e.target.value)} />
+                                    <label for="description">Enter a name for this recipe</label>
+                                </div>
+                                <div className="form-group form-floating mb-3">
+                                    <select className="form-select" id="time"
+                                        aria-label="Select cooking duration of this recipe"
+                                        value={time}
+                                        onChange={e => setTime(e.target.value)}
+                                    >
+                                        <option value="10"> 10 minutes </option>
+                                        <option value="15"> 15 minutes </option>
+                                        <option value="20"> 20 minutes </option>
+                                        <option value="25"> 25 minutes </option>
+                                        <option value="30"> 30 minutes</option>
+                                    </select>
+                                    <label for="time">Enter the cooking duration of this recipe</label>
+                                </div>
+                                <div className="form-group form-floating mb-5">
+                                    <input type="text" className="form-control" id="ingredients" value={ingredients}
+                                        onChange={e => setIngredients(e.target.value)} />
+                                    <label for="ingredients">Enter the ingredients required for this recipe</label>
+                                </div>
+                            </form>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-outline-danger" data-bs-dismiss="modal"
                                     onClick={() => setDefaultValues(recipe)}>
-                                    Close
+                                    <i class="bi bi-x-square"></i>
+                                    &nbsp; Close
                                 </button>
                                 <button type="button" className="btn btn-success" onClick={e => editRecipe(e)}>
-                                    Save changes
+                                    <i class="bi bi-check-square"></i>
+                                    &nbsp; Save changes
                                 </button>
                             </div>
                         </div>
